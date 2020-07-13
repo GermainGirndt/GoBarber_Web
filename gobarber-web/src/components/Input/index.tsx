@@ -7,10 +7,14 @@ import React, {
 } from 'react';
 import { IconBaseProps } from 'react-icons';
 
+import { FiAlertCircle } from 'react-icons/fi';
+
 // UseField is a hook that receives the field name
 import { useField } from '@unform/core';
 
-import { Container } from './styles';
+import Tooltip from '../Tooltip';
+
+import { Container, Error } from './styles';
 
 // extends the property from normal input (InputHTMLAttributes)
 // Don't worry about HTMLInputElement; it's already global in application
@@ -51,7 +55,7 @@ const Input: React.FC<InputProps> = ({ name, icon: Icon, ...rest }) => {
     });
   }, [fieldName, registerField]);
   return (
-    <Container isFilled={isFilled} isFocused={isFocused}>
+    <Container isErrored={!!error} isFilled={isFilled} isFocused={isFocused}>
       {Icon && <Icon size={20} />}
       <input
         onFocus={handleInputFocus}
@@ -61,7 +65,11 @@ const Input: React.FC<InputProps> = ({ name, icon: Icon, ...rest }) => {
         {...rest}
       />
 
-      {error}
+      {error && (
+        <Error title={error}>
+          <FiAlertCircle color="#f55050" size={20} />
+        </Error>
+      )}
     </Container>
   );
 };
