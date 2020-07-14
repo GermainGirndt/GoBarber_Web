@@ -12,8 +12,6 @@ import { FiAlertCircle } from 'react-icons/fi';
 // UseField is a hook that receives the field name
 import { useField } from '@unform/core';
 
-import Tooltip from '../Tooltip';
-
 import { Container, Error } from './styles';
 
 // extends the property from normal input (InputHTMLAttributes)
