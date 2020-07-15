@@ -8,7 +8,7 @@ import * as Yup from 'yup';
 import { Form } from '@unform/web';
 import { Container, Content, Background } from './styles';
 import getValidationErrors from '../../utils/getValidationErrors';
-import { useAuth } from '../../context/AuthContext';
+import { useAuth } from '../../hooks/AuthContext';
 
 import logoImg from '../../assets/logo.svg';
 
@@ -48,9 +48,11 @@ const SignIn: React.FC = () => {
       } catch (err) {
         console.log(err);
 
-        const errors = getValidationErrors(err);
+        if (err instanceof Yup.ValidationError) {
+          const errors = getValidationErrors(err);
 
-        formRef.current?.setErrors(errors);
+          formRef.current?.setErrors(errors);
+        }
       }
     },
     [signIn],
