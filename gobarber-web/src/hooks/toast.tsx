@@ -31,8 +31,6 @@ const ToastProvider: React.FC = ({ children }) => {
       };
 
       setMessages(state => [...state, toast]);
-
-      console.log('add toast');
     },
     [],
   );
