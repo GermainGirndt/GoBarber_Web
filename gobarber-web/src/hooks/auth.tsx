@@ -15,6 +15,7 @@ interface RequestData {
 interface AuthContextData {
   user: object;
   signIn(credentials: SignInCredentials): Promise<void>;
+  signOut(): void;
 }
 
 const AuthContext = createContext<AuthContextData>({} as AuthContextData);
@@ -47,20 +48,21 @@ export const AuthProvider: React.FC = ({ children }) => {
 
     setData({ token, user });
   }, []);
+
+  const signOut = useCallback(() => {
+    localStorage.removeItem('@GoBarber:token');
+    localStorage.removeItem('@GoBarber:user');
+
+    setData({} as RequestData);
+  }, []);
+
   return (
     <>
-      <AuthContext.Provider value={{ user: data.user, signIn }}>
+      <AuthContext.Provider value={{ user: data.user, signIn, signOut }}>
         {children}
       </AuthContext.Provider>
     </>
   );
-
-  const signOut = useCallback(() => {
-    const token = localStorage.removeItem('@GoBarber:token');
-    const user = localStorage.removeItem('@GoBarber:user');
-
-    setData({} as RequestData);
-  }, []);
 };
 
 export function useAuth(): AuthContextData {
