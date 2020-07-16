@@ -19,8 +19,6 @@ const SignUp: React.FC = () => {
   // form handles add type to ref, which is going to receive another value from the forms
   const formRef = useRef<FormHandles>(null);
 
-  console.log(formRef);
-
   const handleSubmit = useCallback(async (data: Record<string, unknown>) => {
     try {
       formRef.current?.setErrors({});
@@ -35,8 +33,6 @@ const SignUp: React.FC = () => {
       // abort early for showing all errors
       await schema.validate(data, { abortEarly: false });
     } catch (err) {
-      console.log(err);
-
       const errors = getValidationErrors(err);
 
       formRef.current?.setErrors(errors);

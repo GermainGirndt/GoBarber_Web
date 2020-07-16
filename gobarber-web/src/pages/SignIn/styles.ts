@@ -16,7 +16,7 @@ export const Content = styled.div`
   align-items: center;
   justify-content: center;
   width: 100%;
-  max-width: 700px;
+  max-width: 480px;
 `;
 
 // Effect by route change
@@ -43,13 +43,13 @@ export const AnimationContainer = styled.div`
   animation: ${appearFromLeft} 1s;
 
   form {
-    margin: 40px 0;
-    width: 340px;
+    margin: 28px 0;
+    width: 280px;
     text-align: center;
 
     h1 {
       margin-bottom: 24px;
-      font-size: 24px;
+      font-size: 20px;
     }
 
     button {
@@ -71,7 +71,7 @@ export const AnimationContainer = styled.div`
   > a {
     color: #f4ede8;
     display: block;
-    margin-top: 16px;
+    margin-top: 8px;
     text-decoration: none;
     transition: color 0.2s;
 
