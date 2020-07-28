@@ -10,7 +10,7 @@ A **complete React.js App** for booking your appointment! :ballot_box_with_check
 * :heart_eyes: Incredible User Experience.
 * :sparkler: Text Input Hightlight on focus.
 * :newspaper: Descriptive Toast Messages in case of Errors/Success
-* :robot: Connects with APIs ([great combination with my Node.js/Express GoBarber API](https://github.com/GermainPereira/GoBarber-Backend2))
+* :robot: Connects with APIs ([great combination with my Node.js/Express GoBarber API](https://github.com/GermainPereira/GoBarber-Backend))
 * :bookmark_tabs: Authentication System via JSW Token.
 
 
