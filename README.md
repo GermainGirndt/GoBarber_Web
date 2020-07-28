@@ -1,5 +1,5 @@
 # :barber: GoBarber [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-A **complete React.js App** for booking your appointment! :ballot_box_with_check:
+A **complete React.js App** for booking your haircut! :ballot_box_with_check:
 
 ## :mag_right: Preview (click for Youtube video)
 [![preview](https://github.com/GermainPereira/GoBarber_Web/blob/master/2020-07-28-Preview.gif?raw=true)](https://www.youtube.com/watch?v=FTYL9jpHKME)
